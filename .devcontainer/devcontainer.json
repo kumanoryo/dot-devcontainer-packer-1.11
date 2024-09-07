@@ -1,0 +1,37 @@
+{
+    "name": "packer-1.11",
+    "image": "ghcr.io/bearfield/packer:1.11",
+    "remoteUser": "kumano_ryo",
+    "mounts": [
+        "source=${localEnv:HOME}/devcontainer_conf/.gitconfig_linux,target=/home/kumano_ryo/.gitconfig,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.config/gcloud,target=/home/kumano_ryo/.config/gcloud,type=bind,consistency=cached"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "fish": {
+                        "path": "fish"
+                    }
+                },
+                "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+                "workbench.colorCustomizations": {
+                    "statusBar.background": "#02A8EF",
+                    "statusBar.foreground": "#000000"
+                }
+            },
+            "extensions": [
+                "wayou.vscode-todo-highlight",
+                "redhat.vscode-yaml",
+                "timonwong.shellcheck",
+                "foxundermoon.shell-format",
+                "github.copilot",
+                "bmalehorn.vscode-fish",
+                "github.copilot-chat",
+                "ms-vscode.makefile-tools",
+                "ms-azuretools.vscode-docker",
+                "oderwat.indent-rainbow"
+            ]
+        }
+    }
+}
