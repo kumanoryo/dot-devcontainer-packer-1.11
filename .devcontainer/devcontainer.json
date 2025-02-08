@@ -6,6 +6,13 @@
         "source=${localEnv:HOME}/devcontainer_conf/.gitconfig_linux,target=/home/kumano_ryo/.gitconfig,type=bind,consistency=cached",
         "source=${localEnv:HOME}/.config/gcloud,target=/home/kumano_ryo/.config/gcloud,type=bind,consistency=cached"
     ],
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+            "version": "latest",
+            "enableNonRootDocker": "true",
+            "moby": "true"
+        }
+    },
     "customizations": {
         "vscode": {
             "settings": {
@@ -30,7 +37,8 @@
                 "github.copilot-chat",
                 "ms-vscode.makefile-tools",
                 "ms-azuretools.vscode-docker",
-                "oderwat.indent-rainbow"
+                "oderwat.indent-rainbow",
+                "github.vscode-pull-request-github"
             ]
         }
     }
