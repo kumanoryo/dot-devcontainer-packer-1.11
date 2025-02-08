@@ -7,7 +7,7 @@ ARG PACKER_VERSION=1.11.*
 USER root
 SHELL ["/bin/bash", "-c"]
 RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
-    && echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" > /etc/apt/sources.list.d/hachicorp.list \
+    && echo "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main" > /etc/apt/sources.list.d/hachicorp.list \
     && apt-get update \
     && apt-get install -y \
         packer=$PACKER_VERSION \
